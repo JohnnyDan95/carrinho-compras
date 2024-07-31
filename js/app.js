@@ -14,9 +14,17 @@ function adicionar() {
 
     let carrinho = document.getElementById('lista-produtos');
 
-    carrinho.innerHTML = carrinho.innerHTML + `<section class="carrinho__produtos__produto">
-          <span class="texto-azul">${quantidade}x</span> ${produtoEscolhido} <span class="texto-azul">${valorSomaQuantidade}</span>
-        </section>`;
+    if (quantidade <= 0) {
+
+       alert('Entrada inválida! Digite uma quantidade acima de 0!');
+
+    } else{
+
+        carrinho.innerHTML = carrinho.innerHTML + `<section class="carrinho__produtos__produto">
+        <span class="texto-azul">${quantidade}x</span> ${produtoEscolhido} <span class="texto-azul">${valorSomaQuantidade}</span>
+      </section>`;
+
+    }
 
     totalCarrinho = totalCarrinho + valorSomaQuantidade;
 
